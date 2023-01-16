@@ -1,0 +1,34 @@
+
+<empCount [allCount]="getTotalEmployeeCount()"
+[maleCount]="getMaleEmployeeCount()"
+[femaleCount]="getFemaleEmployeeCount()"
+(rbselectionChange)="gettingtheSelectedRadioButtonValue($event)"></empCount>
+
+<table border="2">
+    
+    <tr>
+        <th>ID code</th>
+        <th>Name</th>
+        <th>Gender</th>
+        <th>Address</th>
+        <th>Salary</th>
+    </tr>
+    <ng-container *ngFor='let empy of employ'>
+    <tr *ngIf="selectedRbValue=='All'|| empy.gender==selectedRbValue">
+        <button [routerLink]="['/emp']"><td>{{empy.code}}</td></button>
+        <button [routerLink]="['/emp',{code:'xyz'}]"><td>{{empy.code}}</td></button>
+        <button [routerLink]="['/emp', empy.code]" [queryParams]="{'status':'Ankita'}"><td>{{empy.code}}</td></button>
+        <td>{{empy.name | EmployeeTitle:empy.gender }}</td>
+        <td>{{empy.gender}}</td>
+        <td>{{empy.address}}</td>
+        <td>{{empy.salary}}</td>
+        <td> 
+            <!-- <button class="btn-btn-primary" type="button" (click)="navigate(empy)">{{empy.name}}</button>
+            <a class="btn btn-sm btn-primary" [routerLink]="['/empList',empy.code]" aria-current="page" href="#">{{empy.name}}</a> -->
+        </td>
+    </tr>
+    </ng-container>
+    <tr *ngIf='employ.length==0'>
+        <td colspan="5">No details found</td>
+    </tr>
+</table> 
