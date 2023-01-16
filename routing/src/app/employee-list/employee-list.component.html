@@ -1,0 +1,31 @@
+<table border="2">
+    
+    <tr>
+        <th>ID code</th>
+        <th>Name</th>
+        <th>Gender</th>
+        <th>Address</th>
+        <th>Salary</th>
+        <th>Actions</th>
+    </tr>
+    <ng-container *ngFor='let emp of employ'>
+   <tr>
+       <td>{{emp.code}} </td>
+       <td>{{emp.name}}</td>
+       <td>{{emp.gender}}</td>
+       <td>{{emp.address}}</td>
+       <td>{{emp.salary}}</td>
+       <td>
+        <!-- navigation through ts -->
+        <button class="btn btn-primary btn-sm" (click)="navigate(emp)">{{emp.name}}</button>
+
+         <!-- navigation through html -->
+        <button class="btn btn-warn btn-sm" [routerLink]="['/employee',emp.code]">{{emp.name}}</button>
+       </td>
+      
+    </tr>
+</ng-container>
+<tr *ngIf='employ.length==0'>
+    <td colspan="5">No details found</td>
+</tr>
+</table> 
