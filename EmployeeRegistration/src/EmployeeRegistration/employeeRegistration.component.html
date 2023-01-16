@@ -1,0 +1,80 @@
+<form #empForm="ngForm" (ngSubmit)="saveForm(empForm)">
+  <mat-form-field appearance="fill">
+    <mat-label>First Name</mat-label>
+    <input required [(ngModel)]="firstname" matInput placeholder="name" name="firstname" id="firstname"  #firstName="ngModel">
+    <mat-error *ngIf="firstName.invalid">
+      Name is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Middle Name</mat-label>
+    <input [(ngModel)]="middlename" matInput placeholder="name" name="middlename">
+   
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Last Name</mat-label>
+    <input required [(ngModel)]="lastname" matInput placeholder="name" name="lastname" id="lastname"  #lastName="ngModel">
+    <mat-error *ngIf="lastName.invalid">
+      Name is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Age</mat-label>
+    <input required [(ngModel)]="age" matInput placeholder="age" name="age" id="age"  #Age="ngModel">
+    <mat-error *ngIf="Age.invalid">
+      Age is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Gender</mat-label>
+    <mat-select [(ngModel)]="Gender" name="gender">
+      <mat-option *ngFor="let gen of gender" [value]="gen.value">
+        {{gen.value}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>DOB</mat-label>
+    <input type="date" matInput placeholder="DOB" [(ngModel)]="dob" name="dob" id="dob" #Dob="ngModel">
+    <mat-error *ngIf="Dob.invalid">
+      Cannot be <strong>EMPTY</strong>
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Address 1</mat-label>
+    <input required [(ngModel)]="address1" matInput placeholder="address1" name="address1" id="address1"  #Address1="ngModel">
+    <mat-error *ngIf="Address1.invalid">
+      Address is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Address 2</mat-label>
+    <input [(ngModel)]="address2" matInput placeholder="address1" name="address1" id="address1" >
+    
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Pincode</mat-label>
+    <input type="number" min=6 max=6 required [(ngModel)]="pincode" matInput placeholder="pincode" name="pincode" id="pincode"  #Pincode="ngModel">
+    <mat-error *ngIf="Pincode.invalid">
+      Enter valid <strong>pincode</strong>
+    </mat-error>
+  </mat-form-field>
+ 
+
+
+  
+
+  
+
+  <button mat-raised-button color="accent">SAVE</button>
+ 
+
+</form>
