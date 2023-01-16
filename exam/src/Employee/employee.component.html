@@ -1,0 +1,67 @@
+html
+
+<form #registration="ngForm" (ngSubmit)="saveForm(registration)">
+  <mat-form-field appearance="fill">
+    <mat-label>First Name</mat-label>
+    <input [(ngModel)]="firstname" matInput placeholder="name" name="firstname" id="firstname"  #firstName="ngModel">
+    <mat-error *ngIf="firstName.invalid">
+      Name is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Middle Name</mat-label>
+    <input [(ngModel)]="middlename" matInput placeholder="name" name="middlename">
+   
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Last Name</mat-label>
+    <input [(ngModel)]="lastname" matInput placeholder="name" name="lastname">
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Gender</mat-label>
+    <mat-select [(ngModel)]="Gender" name="gender">
+      <mat-option *ngFor="let gen of gender" [value]="gen.value">
+        {{gen.value}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>DOB</mat-label>
+    <input type="date" matInput placeholder="DOB" [(ngModel)]="dob" name="dob">
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Country</mat-label>
+    <mat-select [(ngModel)]="country" name="country" (selectionChange)="countrySelection()">
+      <mat-option *ngFor="let cntry of Country" [value]="cntry.value">
+        {{cntry.value}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>State</mat-label>
+    <mat-select [(ngModel)]="state" name="state" (selectionChange)="citySelection()">
+      <mat-option *ngFor="let state of stateList" [value]="state">
+        {{state}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>City</mat-label>
+    <mat-select [(ngModel)]="city" name="city">
+      <mat-option *ngFor="let city of cityList" [value]="city">
+        {{city}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <button mat-raised-button color="accent">SAVE</button>
+ 
+
+</form>
