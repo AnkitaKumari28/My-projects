@@ -1,0 +1,69 @@
+<form class= "row" #personForm="ngForm" (ngSubmit)="person(personForm)">
+  
+    <mat-form-field class="col-md-4" appearance="fill">
+    <mat-label>First Name</mat-label>
+    <input matInput name="firstname" placeholder="Enter first name" [(ngModel)]="firstname" #firstName="ngModel"  required >
+    <!-- <input matInput name="firstname" placeholder="Enter first name"  required > -->
+    <mat-error>First name <strong>required</strong></mat-error>
+  </mat-form-field><br>
+  
+  
+  <mat-form-field  class="col-md-4"  appearance="fill">
+    <mat-label>Middle Name</mat-label>
+    <input type="text" matInput name="middlename" #middleName="ngModel" placeholder="Enter middle name" ngModel>
+    <!-- <input type="text" matInput name="middlename"  placeholder="Enter middle name" > -->
+
+  </mat-form-field><br>
+  
+
+<mat-form-field  class="col-md-4"  appearance="fill">
+  <mat-label>Last Name</mat-label>
+    <input matInput name="lastname" placeholder="Enter last name" ngModel #lastName="ngModel" required >
+    <mat-error>Last name <strong>required</strong></mat-error>
+  </mat-form-field><br>
+
+  <mat-form-field  class="col-md-4" appearance="fill">
+    <mat-label>Department</mat-label>
+    <mat-select [(ngModel)]="Department" name="department">
+      <mat-option *ngFor="let dep of department" [value]="dep.value">
+        {{dep.value}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field><br>
+
+  <mat-form-field appearance="fill"  class="col-md-4" >
+    <mat-label>Gender</mat-label>
+    <mat-select [(ngModel)]="Gender" name="gender">
+      <mat-option *ngFor="let gen of gender" [value]="gen.value">
+        {{gen.value}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field><br>
+
+  <mat-form-field appearance="fill"  class="col-md-4" >
+    <mat-label>DOB</mat-label>
+    <input required type="date" matInput placeholder="DOB" [(ngModel)]="dob" name="dob">
+    <mat-error>Cannot be<strong> empty</strong></mat-error>
+  </mat-form-field><br>
+
+  <mat-form-field appearance="fill"  class="col-md-4" >
+    <mat-label>Address1</mat-label>
+      <input matInput name="address" placeholder="Enter address" ngModel #Address="ngModel" required >
+      <mat-error>Address <strong>required</strong></mat-error>
+    </mat-form-field><br>
+
+    <mat-form-field appearance="fill"  class="col-md-4" >
+      <mat-label>Pincode</mat-label>
+        <input matInput type="number" name="pincode" placeholder="Enter pincode" ngModel #Pincode="ngModel" required >
+        
+        <mat-error>Pincode <strong>required</strong></mat-error>
+      </mat-form-field>
+<div class="col-md-12" style="padding-left: 45%;">
+    <button class="mx-auto" style="width:100px"  (click)="pop()" mat-raised-button color="primary">Submit</button>
+</div>
+</form>
+
+
+
+
+

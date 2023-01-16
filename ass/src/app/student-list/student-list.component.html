@@ -1,0 +1,32 @@
+<table border="2">
+    <tr>
+        <th>StudentId</th>
+        <th>Full name</th>
+        <th>Class</th>
+        <th>Roll no.</th>
+        <th>MATH</th>
+        <th>ENGLISH</th>
+        <th>HINDI</th>
+        <th>SCIENCE</th>
+        <th>DRAWING</th>
+        <th>TOTAL MARKS</th>
+    </tr>
+    <ng-container *ngFor='let std of list'>
+    <tr>
+        <td>{{std.StudentId}}</td>
+        <td [ngClass]="{'red':std.Math<35||std.English<35||std.Hindi<35||std.Science<35||std.Drawing<35}">{{std.FirstName +" "+std.MiddleName +" "+std.LastName}}</td>
+        <td>{{std.Class}}</td>
+        <td>{{std.RollNo}}</td>
+        <td Highlight [bgColor]="std.Math>35? 'white': 'red'">{{std.Math}}</td>
+        <td Highlight [bgColor]="std.English>35? 'white': 'red'">{{std.English}}</td>
+        <td Highlight [bgColor]="std.Hindi>35? 'white': 'red'">{{std.Hindi}}</td>
+        <td Highlight [bgColor]="std.Science>35? 'white': 'red'">{{std.Science}}</td>
+        <td Highlight [bgColor]="std.Drawing>35? 'white': 'red'">{{std.Drawing}}</td>
+        <td Highlight [bgColor]="std.Math+std.English+std.Hindi+std.Science+std.Drawing>250? 'green': 'blue'">{{std.Math+std.English+std.Hindi+std.Science+std.Drawing}}</td>
+       
+    </tr>
+    
+
+</ng-container>
+</table>
+
