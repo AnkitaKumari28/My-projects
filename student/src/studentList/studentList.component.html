@@ -1,0 +1,27 @@
+<table border="2">
+    <tr>
+        <th>NAME</th>
+        <th>GENDER</th>
+        <th>ROLL</th>
+        <th>MATH</th>
+        <th>ENGLISH</th>
+        <th>HINDI</th>
+        <th>SOCIAL SCIENCE</th>
+        <th>TOTAL MARKS</th>
+    </tr>
+    <ng-container *ngFor='let std of list'>
+    <tr>
+        <td>{{std.name}}</td>
+        <td>{{std.gender}}</td>
+        <td>{{std.roll}}</td>
+        <td Highlight [bgColor]="std.math>35? 'white': 'blue'">{{std.math}}</td>
+        <td Highlight [bgColor]="std.english>30? 'white': 'blue'">{{std.english}}</td>
+        <td Highlight [bgColor]="std.hindi>30? 'white': 'blue'">{{std.hindi}}</td>
+        <td Highlight [bgColor]="std.socialscience>30? 'white': 'blue'">{{std.socialscience}}</td>
+        <td Highlight [bgColor]="std.math+std.english+std.hindi+std.socialscience>130? 'green': 'red'">{{std.math+std.english+std.hindi+std.socialscience}}</td>
+    </tr>
+    
+
+</ng-container>
+</table>
+<button mat-flat-button color="warn">Warn</button>
