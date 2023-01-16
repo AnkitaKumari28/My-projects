@@ -1,0 +1,37 @@
+<div style=" margin-top: 20px;" class="container row mx-auto">
+  <h1 class="col-md-12 text-left">
+    <u><b>View Employee</b></u>
+  </h1>
+  <section class="col-md-4">
+    <label style=" font-size: 17px;
+    padding: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;" >Code: &nbsp;</label> <span>{{empList.code}}</span>
+  </section>
+  <section style=" font-size: 17px;
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;" class="col-md-4">
+    <label>Name:&nbsp; </label>
+    <span>{{empList.name}}</span>
+  </section>
+  <section style=" font-size: 17px;
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;" class="col-md-4">
+    <label >Gender: &nbsp;</label><span>{{empList.gender}}</span>
+  </section >
+  <section style=" font-size: 17px;
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;" class="col-md-4">
+    <label >Address: &nbsp;</label><span>{{empList.address}}</span>
+  </section>  
+  <section style=" font-size: 17px;
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;" class="col-md-4">
+    <label >Salary:&nbsp; </label><span>{{empList.salary}}</span>
+  </section>  <br><br><br>
+
+ <div>
+  <section style="padding: 20px;" class="col-md-1">
+    <button mat-raised-button color="primary" (click)="viewBack()" >Go to Employee List</button>
+  </section>
+</div>
+</div>

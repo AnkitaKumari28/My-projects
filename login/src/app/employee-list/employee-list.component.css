@@ -1,0 +1,26 @@
+table{
+    min-width:50% ;
+    margin-left: 30px;
+    margin-top: 30px;   
+
+}
+.container{
+    display: grid;
+    place-items: center;
+}
+
+.centre{
+    text-align: center;
+}
+.buttonG{
+    color: green;
+}
+
+.buttonB{
+    color: blue;
+}
+
+.buttonR{
+    color: red;
+}
+

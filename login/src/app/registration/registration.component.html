@@ -1,0 +1,86 @@
+<!-- 
+  <form>
+    <h1>Register Yourself</h1>
+    <div class="col-md-3">
+
+    <div class="form-outline mb-4">
+      <label class="form-label" for="name1">Your name</label>
+      <input type="text" id="name1" name="name1" class="form-control form-control-lg" />
+    </div>
+
+    <div class="form-outline mb-4">
+      <label class="form-label" for="email2">Enter email</label>
+      <input type="email" id="email2" name="email2" class="form-control form-control-lg" />
+    </div>
+     <div class="row" col-md-12 >
+    <div class="form-outline mb-4" col-md-6>
+      <label class="form-label" for="password2">Enter Password</label>
+      <input type="password" id="password2" name="email2" class="form-control form-control-lg" />
+    </div>
+
+    <div class="form-outline mb-4" col-md-6>
+      <label class="form-label" for="password3">Re-enter password</label>
+      <input type="password" id="password3" name="password3" class="form-control form-control-lg" />
+    </div>
+  </div>
+
+
+    <div class="d-flex justify-content-center">
+      <button type="button" 
+        class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Register</button>
+    </div>
+  </div>
+</form> -->
+
+
+<form #personForm1="ngForm" (ngSubmit)="RegisterForm(personForm1)">
+  <h1>Register Yourself</h1>
+  <div class="form-outline mb-4">
+
+  <div class="form-outline" col md-12>
+    <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label class="form-label" for="name1">Your name</mat-label>
+    <input required matInput type="text" id="name1" placeholder="your name" name="name1" #namer="ngModel" [(ngModel)]="name1" class="form-control form-control-lg">
+    <mat-error *ngIf="namer.invalid">
+      <strong>Name is required</strong>
+    </mat-error>
+  </mat-form-field>
+</div>
+
+<div class="form-outline" col md-12>
+  <mat-form-field class="example-full-width" appearance="fill">
+  <mat-label class="form-label" for="email">Email</mat-label>
+  <input required matInput type="email" id="email2" placeholder="your email" name="email2" #emailr="ngModel" [(ngModel)]="email2" class="form-control form-control-lg">
+  <mat-error *ngIf="emailr.invalid">
+    <strong>email is required</strong>
+  </mat-error>
+</mat-form-field>
+</div>
+
+<div class="form-outline" col md-12>
+  <mat-form-field class="example-full-width" appearance="fill">
+  <mat-label class="form-label" for="password2">Password</mat-label>
+  <input required matInput type="password" id="password2" placeholder="your password" name="password2" #passwordr2="ngModel" [(ngModel)]="password2" class="form-control form-control-lg">
+  <mat-error *ngIf="passwordr2.invalid">
+    <strong>password is required</strong>
+  </mat-error>
+</mat-form-field>
+</div>
+
+<div class="form-outline" col md-12>
+  <mat-form-field class="example-full-width" appearance="fill">
+  <mat-label class="form-label" for="password3">Re-enter Password</mat-label>
+  <input required matInput type="password" id="password3" placeholder="your password" name="password3" #passwordr3="ngModel" [(ngModel)]="password3" class="form-control form-control-lg">
+  <mat-error *ngIf="passwordr3.invalid">
+    <strong>password is required</strong>
+  </mat-error>
+</mat-form-field>
+</div>
+
+ 
+<div class="d-flex justify-content-center">
+  <button routerLink="login" type="button" 
+  class="btn btn-success btn-block btn-lg gradient-custom-4 text-body"> <a href="/login">Register</a></button>
+</div>
+  </div>
+</form>

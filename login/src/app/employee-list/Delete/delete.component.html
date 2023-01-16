@@ -1,0 +1,40 @@
+<div style=" margin-top: 20px;"  class="container row mx-auto">
+    <h1 class="col-md-12 text-left">
+      <b><u>Delete Employee</u></b>
+      
+    </h1>
+    <section class="col-md-4">
+      <label style=" font-size: 17px;
+      padding: 20px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Code: &nbsp;</label> <span>{{empList.code}}</span>
+    </section>
+    <section class="col-md-4">
+      <label style=" font-size: 17px;
+      padding: 20px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Name:&nbsp; </label>
+      <span>{{empList.name}}</span>
+    </section>
+    <section class="col-md-4">
+      <label style=" font-size: 17px;
+      padding: 20px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Gender: &nbsp;</label><span>{{empList.gender}}</span>
+    </section>
+    <section class="col-md-4">
+      <label style=" font-size: 17px;
+      padding: 20px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Address: &nbsp;</label><span>{{empList.address}}</span>
+    </section>  
+    <section class="col-md-4">
+      <label style=" font-size: 17px;
+      padding: 20px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Salary:&nbsp; </label><span>{{empList.salary}}</span>
+    </section> <br><br><br>
+  
+   <div>
+    <section class="col-md-4">
+        <button mat-raised-button color="warn" (click)="openDialog()" class="btn-red">Delete</button>
+
+      <button mat-raised-button color="primary" (click)="deleteBack()" class="col-md-3 mx-2 ms-3 btn-red">Go back</button>
+    </section>
+  </div>
+</div>

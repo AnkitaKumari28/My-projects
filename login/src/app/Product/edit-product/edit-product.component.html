@@ -1,0 +1,97 @@
+
+
+<form [formGroup]="productEditForm" (ngSubmit)="submitEditedForm()">
+ 
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-10">
+            <h1 style="margin-top:30px ;" class="h1-top"><b><u>Product Form</u></b></h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2"></div>
+      <div class="col-md-3">
+        <mat-form-field class="example-form-field" appearance="outline">
+            <mat-label>Category</mat-label>
+            <input matInput type="text" formControlName="category">
+    
+          </mat-form-field>
+        </div>
+        <div class="col-md-3">
+          <mat-form-field class="example-form-field" appearance="outline">
+              <mat-label>name</mat-label>
+              <input matInput type="text" formControlName="name" >
+                <mat-error *ngIf="productEditForm.get('name')!.errors!==null && productEditForm.get('name')!.errors!['required']">
+                  Name is required</mat-error>
+            </mat-form-field>
+          </div>
+          <div class="col-md-3">
+            <mat-form-field class="example-form-field" appearance="outline">
+                <mat-label>colour</mat-label>
+                <input matInput type="text" formControlName="color" >
+      
+              </mat-form-field>
+            </div>
+</div>
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-3">
+        <mat-form-field class="example-form-field" appearance="outline">
+            <mat-label>code</mat-label>
+            <input matInput type="text" formControlName="code" >
+        </mat-form-field>
+    </div>
+    <div class="col-md-3">
+        <mat-form-field class="example-form-field" appearance="outline">
+            <mat-label>quantity</mat-label>
+            <input matInput type="number" formControlName="quantity" >
+        </mat-form-field>
+    </div>
+    <div class="col-md-3">
+        <mat-form-field class="example-form-field" appearance="outline">
+            <mat-label>price</mat-label>
+            <input matInput type="number" formControlName="price" >
+            <mat-error *ngIf="productEditForm.get('price')!.errors!==null && productEditForm.get('price')!.errors!['required']">
+                Price is required
+            </mat-error>
+            <mat-error *ngIf="productEditForm.get('price')!.errors!==null && productEditForm.get('price')!.errors!['min']">
+                enter value greater than 0
+            </mat-error>
+            <mat-error *ngIf="productEditForm.get('price')!.errors!==null && productEditForm.get('price')!.errors!['max']">
+                Enter value less than 50000
+            </mat-error>
+        </mat-form-field>
+    </div>
+
+  <div class="row">  
+    <div class="col-md-2"></div>
+    <div class="col-md-3">
+      <mat-form-field class="example-form-field" appearance="outline">
+          <mat-label>email</mat-label>
+          <input matInput type="text" formControlName="email" >
+          <mat-error *ngIf="productEditForm.get('email')!.errors!==null && productEditForm.get('email')!.errors!['required']">
+             Email Required</mat-error>
+          <!-- <mat-error *ngIf= " !productEditForm.get('email')!.errors!['required'] && productEditForm.get('email')!.errors!==null &&  productEditForm.get('email')!.errors!['emailmismatch']">
+            Email Invalid
+          </mat-error> -->
+      </mat-form-field>
+  </div>
+
+    <div class="col-md-3">
+         <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>Description</mat-label>
+            <textarea matInput placeholder="Ex. It has..."></textarea>
+        </mat-form-field>
+        </div>
+    </div>
+
+
+</div>
+<div class="row">
+    <div class="col-md-2"></div>
+  <div class="col-md-1 ">
+    <button mat-raised-button class="btn btn-primary">Create</button>
+    </div>
+    
+  </div>
+</form> 

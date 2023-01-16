@@ -1,0 +1,55 @@
+
+
+<form #empEdit="ngForm" (ngSubmit)="saveForm(empEdit)" >
+ 
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-10">
+            <h1 style="margin-top: 30px;" class="h1-top"><b><u>Edit Employee</u></b></h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2"></div>
+      <div class="col-md-3">
+        <mat-form-field class="example-form-field" appearance="outline">
+            <mat-label>Code</mat-label>
+            <input matInput type="text" #Code="ngModel" name="Code" [(ngModel)]="empList.code">
+    
+          </mat-form-field>
+        </div>
+        <div class="col-md-3">
+          <mat-form-field class="example-form-field" appearance="outline">
+              <mat-label>name</mat-label>
+              <input matInput type="text" #Name ="ngModel" name="Name" [(ngModel)]="empList.name">
+                <mat-error>
+                  Name is required</mat-error>
+            </mat-form-field>
+          </div>
+          <div class="col-md-3">
+            <mat-form-field class="example-form-field" appearance="outline">
+                <mat-label>gender</mat-label>
+                <input matInput type="text" #Gender="ngModel" name="Gender" [(ngModel)]="empList.gender">
+              </mat-form-field>
+            </div>
+</div>
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-3">
+        <mat-form-field class="example-form-field" appearance="outline">
+            <mat-label>Address</mat-label>
+            <input matInput type="text" #Address="ngModel" name="Address" [(ngModel)]="empList.address">
+        </mat-form-field>
+    </div>
+    <div class="col-md-3">
+        <mat-form-field class="example-form-field" appearance="outline">
+            <mat-label>Salary</mat-label>
+            <input matInput type="number" #Salary="ngModel" name="Salary" [(ngModel)]="empList.salary">
+        </mat-form-field>
+    </div>
+   </div>
+  <div class="row">
+    <div class="col-md-2"></div>
+    <button mat-raised-button color="primary"  (click)="back()" class="col-md-auto mx-2">Save</button>
+    
+  </div>
+</form>
