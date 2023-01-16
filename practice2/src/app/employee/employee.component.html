@@ -1,0 +1,34 @@
+<form #employeeForm="ngForm" (ngSubmit)="emp(employeeForm)">
+    <mat-form-field appearance="fill">
+    <mat-label>First Name</mat-label>
+    <input matInput name="firstname" placeholder="Enter first name" [(ngModel)]="firstname" #firstName="ngModel"  required >
+    <mat-error>First name <strong>required</strong></mat-error>
+  </mat-form-field><br>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Middle Name</mat-label>
+    <input type="text" matInput name="middlename" #middleName="ngModel" placeholder="Enter middle name" ngModel>
+  </mat-form-field><br>
+
+<mat-form-field appearance="fill">
+  <mat-label>Last Name</mat-label>
+    <input matInput name="lastname" placeholder="Enter last name" ngModel #lastName="ngModel" required >
+    <mat-error>Last name <strong>required</strong></mat-error>
+  </mat-form-field><br>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Email</mat-label>
+      <input matInput type="email" name="email" placeholder="Enter email" ngModel #Email="ngModel" required >
+      <mat-error>Email <strong>required</strong></mat-error>
+      <mat-error *ngIf="Email.invalid">Enter valid email</mat-error>
+    </mat-form-field><br><br>
+
+    
+    <button mat-raised-button color="primary">Submit</button>
+  <!-- <button [disabled]="employeeForm.invalid" mat-raised-button color="primary">Submit</button> -->
+</form><br>
+
+<button type="button" (click)="openDialog()">open dialog</button>
+
+
+
