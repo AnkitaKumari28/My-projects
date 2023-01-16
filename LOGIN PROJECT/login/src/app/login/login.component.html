@@ -1,0 +1,64 @@
+<div *ngIf="isLogin==false">
+	<div class="container" id="container">
+		<div class="form-container sign-up-container">
+			<form action="#">
+				<h1>Create Account</h1>
+				
+				<span>or use your email for registration</span>
+				<input type="text" placeholder="Name" />
+				<input type="email" placeholder="Email" />
+				<input type="password" placeholder="Password" />
+				<button>Sign Up</button>
+			</form>
+		</div>
+		
+		<div class="form-container sign-in-container">
+		<form #UserLogIn="ngForm" (ngSubmit)="LoginForm(UserLogIn)">
+	
+			<h1>Sign in</h1>
+			
+			
+				<mat-form-field appearance="fill">
+					<mat-label>Username</mat-label>
+					<input matInput type="text" placeholder="username" name="username" #userName="ngModel" [(ngModel)]="user" required>
+					<mat-error *ngIf="userName.invalid"><strong>Invalid </strong>username</mat-error>
+				</mat-form-field >
+				<mat-form-field appearance="fill">
+					<mat-label>Password</mat-label>
+					<input matInput type="password" placeholder="password" name="password" #Password="ngModel" [(ngModel)]="pass" required>
+					<mat-error *ngIf="Password.invalid"><strong>Invalid</strong> password</mat-error>
+				</mat-form-field >
+				<a href="#">Forgot your password?</a>
+				<button (click)="onClick()">LOGIN</button>
+			</form>
+		</div>
+	
+		<div class="overlay-container">
+			<div class="overlay">
+				<div class="overlay-panel overlay-left">
+					<h1>Welcome Back!</h1>
+					<p>To keep connected with us please login with your personal info</p>
+					<button class="ghost" id="signIn">Sign In</button>
+				</div>
+				<div class="overlay-panel overlay-right">
+					<h1>Hello, Friend!</h1>
+					<p>Enter your personal details and start journey with us</p>
+					<button class="ghost" id="signUp" (click)="onclicksignup()">Sign Up</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+	<!-- <div *ngIf="isLogin==true ">
+		<app-dashboard></app-dashboard> 
+	</div>
+	<div *ngIf="issignup==true">
+		
+		<app-registration></app-registration>
+	</div> -->
+
+
+	<!-- && issignup==false -->
+	
+	
+	
