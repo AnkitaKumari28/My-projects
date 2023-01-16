@@ -1,0 +1,138 @@
+<form [formGroup]="EmployeeForm" (ngSubmit)="submit()">
+ 
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-10">
+            <h1 style="margin-top:30px ;" class="h1-top"><b><u>Employee Form</u></b></h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2"></div>
+    
+        <div class="col-md-3">
+          <mat-form-field class="example-form-field" appearance="outline">
+              <mat-label>first name</mat-label>
+              <input matInput type="text" formControlName="firstname" >
+                <mat-error *ngIf="EmployeeForm.get('firstname')!.errors!==null && EmployeeForm.get('firstname')!.errors!['required']">
+                  First name is required</mat-error>
+            </mat-form-field>
+          </div>
+
+          <div class="col-md-3">
+            <mat-form-field class="example-form-field" appearance="outline">
+                <mat-label>middle name</mat-label>
+                <input matInput type="text" formControlName="middlename" >
+              </mat-form-field>
+            </div>
+            <div class="col-md-3">
+                <mat-form-field class="example-form-field" appearance="outline">
+                    <mat-label>last name</mat-label>
+                    <input matInput type="text" formControlName="lastname" >
+                      <mat-error *ngIf="EmployeeForm.get('lastname')!.errors!==null && EmployeeForm.get('lastname')!.errors!['required']">
+                        last name is required</mat-error>
+                  </mat-form-field>
+                </div>
+</div>
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-3">
+        <mat-form-field class="example-form-field" appearance="outline">
+            <mat-label>email id</mat-label>
+            <input matInput type="text" formControlName="email" >
+              <mat-error *ngIf="EmployeeForm.get('email')!.errors!==null && EmployeeForm.get('email')!.errors!['required']">
+                email is required</mat-error>
+          </mat-form-field>
+        </div>
+    
+    <div class="col-md-3">
+        <mat-form-field class="example-form-field" appearance="outline">
+            <mat-label>contact no</mat-label>
+            <input matInput type="number" formControlName="contactNo" >
+            <mat-error *ngIf="EmployeeForm.get('contactNo')!.errors!==null && EmployeeForm.get('contactNo')!.errors!['required']">
+                contact no is required
+            </mat-error>
+            <mat-error *ngIf="EmployeeForm.get('contactNo')!.errors!==null && EmployeeForm.get('contactNo')!.errors!['min']">
+                enter value greater than 0
+            </mat-error>
+            <mat-error *ngIf="EmployeeForm.get('contactNo')!.errors!==null && EmployeeForm.get('contactNo')!.errors!['max']">
+                Enter value less than 9999999999
+            </mat-error>
+        </mat-form-field>
+    </div>
+
+    <div class="col-md-3">
+      <mat-form-field class="example-form-field" appearance="outline"  >
+        <mat-label>Gender</mat-label>
+        <mat-select type="text" formControlName="gender" >
+          <mat-option *ngFor="let gen of gender" [value]="gen.value">
+            {{gen.value}}
+          </mat-option>
+          <mat-error *ngIf="EmployeeForm.get('gender')!.errors!['required']"> Gender is required</mat-error>
+        </mat-select>
+      </mat-form-field>
+      </div>
+   
+</div>
+
+<div class="row">
+
+<div class="col-md-2"></div>
+
+<div class="col-md-3">
+  <mat-form-field appearance="outline"  >
+      <mat-label>DOB</mat-label>
+      <input required type="date" matInput formControlName="dob" >
+      <mat-error *ngIf="EmployeeForm.get('dob')!.errors!==null && EmployeeForm.get('dob')!.errors!['required']">
+          DOB is required</mat-error>
+    </mat-form-field>
+</div>
+
+  <div class="col-md-3">
+    <mat-form-field class="example-form-field" appearance="outline"  >
+      <mat-label>Employee Type</mat-label>
+      <mat-select type="text" formControlName="employeetype" >
+        <mat-option *ngFor="let emptype of employeetype" [value]="emptype.value">
+            {{emptype.value}}
+          </mat-option>
+        
+      </mat-select>
+    </mat-form-field>
+    </div>
+    <div class="col-md-3">
+        <mat-form-field class="example-form-field" appearance="outline">
+            <mat-label>address</mat-label>
+            <input matInput type="text" formControlName="address" >
+              <mat-error *ngIf="EmployeeForm.get('address')!.errors!==null && EmployeeForm.get('address')!.errors!['required']">
+                Address is required</mat-error>
+          </mat-form-field>
+        </div>
+  
+    </div>
+
+    <div class="row">
+
+        <div class="col-md-2"></div>
+    <div class="col-md-3">
+        <mat-form-field class="example-form-field" appearance="outline">
+            <mat-label>pincode</mat-label>
+            <input matInput type="number" formControlName="pincode" >
+            <mat-error *ngIf="EmployeeForm.get('pincode')!.errors!==null && EmployeeForm.get('pincode')!.errors!['required']">
+                pincode is required
+            </mat-error>
+            <mat-error *ngIf="EmployeeForm.get('pincode')!.errors!==null && EmployeeForm.get('pincode')!.errors!['min']">
+                enter value greater than 0
+            </mat-error>
+            <mat-error *ngIf="EmployeeForm.get('pincode')!.errors!==null && EmployeeForm.get('pincode')!.errors!['max']">
+                Enter value less than 999999
+            </mat-error>
+        </mat-form-field>
+        </div>
+    </div>
+
+<div class="row">
+    <div class="col-md-2"></div>
+  <div class="col-md-1 ">
+    <button mat-raised-button color="primary" >Create</button>
+    </div>
+  </div>   
+</form>
